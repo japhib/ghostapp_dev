@@ -1,0 +1,27 @@
+# ghost app createTable
+
+CREATE TABLE Connection (
+	id INTEGER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	name TEXT NOT NULL
+);
+
+CREATE TABLE Path (
+	id INTEGER NOT NULL,
+	connectionID INTEGER NOT NULL,
+	FOREIGN KEY (connectionID) REFERENCES Connection (id)
+)
+
+CREATE TABLE Trip (
+	id INTEGER NOT NULL,
+	pathID INTEGER NOT NULL,
+	FOREIGN KEY (pathID) REFERENCES Path (id)
+)
+
+CREATE TABLE Point (
+	id INTEGER NOT NULL,
+	tripID INTEGER NOT NULL,
+	FOREIGN KEY (tripID) REFERENCES Trip (id),
+	latitude DECIMAL NOT NULL,
+	longitutde DECIMAL NOT NULL,
+	timerPoint DATETIME NOT NULL
+)
