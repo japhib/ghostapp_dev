@@ -29,32 +29,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if (CLLocationManager.locationServicesEnabled())
-        {
-            locationManager = CLLocationManager()
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyBest
-            locationManager.requestAlwaysAuthorization()
-            locationManager.startUpdatingLocation()
-            
-            self.mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
-            self.mapView!.myLocationEnabled = true
-            self.mapView!.settings.myLocationButton = true
-            self.view = mapView
-            
-//            let path = GMSMutablePath()
-//            path.addCoordinate(CLLocationCoordinate2DMake(37.35647419, -122.11607907))
-//            path.addCoordinate(CLLocationCoordinate2DMake(37.35728082, -122.11715581))
-//            path.addCoordinate(CLLocationCoordinate2DMake(37.35846644, -122.11829223))
-//            let polyline = GMSPolyline(path: path)
-//            polyline.strokeWidth = 5.0
-//            polyline.strokeColor = UIColor(red: 1.0, green: 0.0, blue: 0.00, alpha: 1.0)
-//            polyline.map = self.mapView
-        }
-        else
-        {
+        if (CLLocationManager.locationServicesEnabled()) {
+            initLocationServices()
+        } else {
             print("Location services disabled!")
         }
+    }
+    
+    private func initLocationServices() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
+        self.mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
+        self.mapView!.myLocationEnabled = true
+        self.mapView!.settings.myLocationButton = true
+        self.view = mapView
     }
     
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -70,18 +62,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         
         latitude = newlatitude
         longitude = newlongitude
-        
         print("Latitude: \(latitude). Longitude: \(longitude)")
         
         // First time we update location, center camera on user's current location
         if !initial_update {
-//            let newPosition = GMSCameraPosition.cameraWithLatitude(37.35647419, longitude: -122.11607907, zoom: initial_zoom)
             let newPosition = GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: initial_zoom)
             self.mapView?.camera = newPosition
             initial_update = true
         }
         
-        // Init marker & polyline if they haven't been init'ed already
+        // Init marker if it hasn't been init'ed already
         if self.marker == nil {
             self.marker = GMSMarker()
             self.marker!.map = mapView
@@ -94,6 +84,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         coord_list.append(CLLocationCoordinate2D(latitude: latitude, longitude: longitude))
         
         // add polyline
+        // NOTE: This adds a whole new polyline to the map each time instead of updating just one at a time
         let path = GMSMutablePath()
         for coord in coord_list {
             path.addCoordinate(coord)

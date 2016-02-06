@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1619D6551EE95FB1F0130C97 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F311C516D31A516CECDB293D /* libPods.a */; };
+		50A0DEBC1C66664400BA4330 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0DEBB1C66664400BA4330 /* Connection.swift */; };
+		50A0DEBE1C66685400BA4330 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0DEBD1C66685400BA4330 /* Path.swift */; };
+		50A0DEC01C66695400BA4330 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0DEBF1C66695400BA4330 /* Trip.swift */; };
+		50A0DEC21C66698400BA4330 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0DEC11C66698400BA4330 /* Point.swift */; };
 		50C136411C541555000F93FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C136401C541555000F93FA /* AppDelegate.swift */; };
 		50C136431C541555000F93FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C136421C541555000F93FA /* ViewController.swift */; };
 		50C136461C541555000F93FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C136441C541555000F93FA /* Main.storyboard */; };
@@ -29,6 +33,10 @@
 /* Begin PBXFileReference section */
 		184AF157DE9434BA20AF36BD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		429645D8925D2BE174CC2DA1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		50A0DEBB1C66664400BA4330 /* Connection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connection.swift; sourceTree = "<group>"; };
+		50A0DEBD1C66685400BA4330 /* Path.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
+		50A0DEBF1C66695400BA4330 /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		50A0DEC11C66698400BA4330 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		50C1363D1C541555000F93FA /* MapsTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapsTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C136401C541555000F93FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50C136421C541555000F93FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +102,10 @@
 			children = (
 				50C136401C541555000F93FA /* AppDelegate.swift */,
 				50C136421C541555000F93FA /* ViewController.swift */,
+				50A0DEBB1C66664400BA4330 /* Connection.swift */,
+				50A0DEBD1C66685400BA4330 /* Path.swift */,
+				50A0DEBF1C66695400BA4330 /* Trip.swift */,
+				50A0DEC11C66698400BA4330 /* Point.swift */,
 				50C136441C541555000F93FA /* Main.storyboard */,
 				50C136471C541555000F93FA /* Assets.xcassets */,
 				50C136491C541555000F93FA /* LaunchScreen.storyboard */,
@@ -272,7 +284,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A0DEC01C66695400BA4330 /* Trip.swift in Sources */,
 				50C136431C541555000F93FA /* ViewController.swift in Sources */,
+				50A0DEC21C66698400BA4330 /* Point.swift in Sources */,
+				50A0DEBC1C66664400BA4330 /* Connection.swift in Sources */,
+				50A0DEBE1C66685400BA4330 /* Path.swift in Sources */,
 				50C136411C541555000F93FA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
