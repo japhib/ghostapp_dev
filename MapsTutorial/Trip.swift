@@ -29,7 +29,7 @@ class Trip : NSObject, NSCoding {
         self.points = points
         self.timestamp = timestamp
     }
-    
+
     required convenience init?(coder aDecoder: NSCoder) {
         let points = aDecoder.decodeObjectForKey(PropertyKey.pointsKey) as! [Point]
         let timestamp = aDecoder.decodeObjectForKey(PropertyKey.timestampKey) as! NSDate
@@ -40,6 +40,14 @@ class Trip : NSObject, NSCoding {
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(points, forKey: PropertyKey.pointsKey)
         aCoder.encodeObject(timestamp, forKey: PropertyKey.timestampKey)
+    }
+
+    func addPoint(point: Point){
+        points.append(point)
+    }
+    
+    func getPoints()->[Point]{
+        return points
     }
     
     func updateTimestampNow() {
