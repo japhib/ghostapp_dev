@@ -8,9 +8,29 @@
 
 import UIKit
 
-class Trip {
-    var points : [Point] = [Point]()
-    var timestamp : NSDate = NSDate() // gives timestamp of right now
+class Trip {//: NSObject, NSCoding {
+    
+    var points : [Point]
+    var timestamp : NSDate
+    
+    struct PropertyKey {
+        static let pointsKey = "points"
+        static let timestampKey = "timestamp"
+    }
+    
+    init() {
+        points = [Point]()
+        timestamp = NSDate() // gives timestamp of right now
+    }
+    
+    init(points: [Point], timestamp: NSDate) {
+        self.points = points
+        self.timestamp = timestamp
+    }
+    
+//    required convenience init?(coder aDecoder: NSCoder) {
+////        let points = aDecoder.decodeObjectForKey(PropertyKey.
+//    }
     
     func updateTimestampNow() {
         timestamp = NSDate()
