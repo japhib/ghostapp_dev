@@ -824,6 +824,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print("Location services disabled!")
         }
         
+        
 
     }
     
@@ -850,12 +851,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
    
         
 ////////////////////// START TESTING PAST PATH   /////////////////////////
-//        let end = NSDate();
-//        let timeInterval: Double = end.timeIntervalSinceDate(start);
+        let currentTime = NSDate();
+        let timeInterval: Double = currentTime.timeIntervalSinceDate(start);
         //// PAST PATH
         // add to coord list
-        past_coord_list.append(CLLocationCoordinate2D(latitude: testPath[pointIndex].latitude, longitude: testPath[pointIndex].longitude))
+        while(testPath[pointIndex].time<timeInterval && pointIndex < testPath.count-1){
         
+            past_coord_list.append(CLLocationCoordinate2D(latitude: testPath[pointIndex].latitude, longitude: testPath[pointIndex].longitude))
+            
+            ++pointIndex
+        }
         // add polyline
         // NOTE: This adds a whole new polyline to the map each time instead of updating just one at a time
         let past_path = GMSMutablePath()
@@ -866,7 +871,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         past_polyline.strokeWidth = 5.0
         past_polyline.strokeColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
         past_polyline.map = self.mapView
-        ++pointIndex
+        
 ////////////////////// END TESTING PAST PATH   /////////////////////////
         
         if newlongitude == longitude && newlatitude == latitude {
