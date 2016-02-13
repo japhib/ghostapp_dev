@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 class Trip : NSObject, NSCoding {
     
@@ -25,7 +26,9 @@ class Trip : NSObject, NSCoding {
         super.init()
     }
     
-    init(points: [Point], timestamp: NSDate) {
+    convenience init(points: [Point], timestamp: NSDate) {
+        self.init()
+
         self.points = points
         self.timestamp = timestamp
     }
@@ -68,5 +71,26 @@ class Trip : NSObject, NSCoding {
     
     func getLength() -> Double {
         return points.last!.time;
+    }
+    
+    func toString() -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.LongStyle
+        formatter.timeStyle = .MediumStyle
+        
+        var ret = "Trip with start time: " + formatter.stringFromDate(self.timestamp) + "\n"
+        
+        for point in points {
+            ret += "Latitude: \(point.latitude) -- Longitude: \(point.longitude)\n"
+        }
+        
+        return ret
+    }
+    
+    func getPathObj() {
+        let ret = GMSMutablePath()
+        for point in points {
+            ret.add
+        }
     }
 }
