@@ -81,16 +81,28 @@ class Trip : NSObject, NSCoding {
         var ret = "Trip with start time: " + formatter.stringFromDate(self.timestamp) + "\n"
         
         for point in points {
-            ret += "Latitude: \(point.latitude) -- Longitude: \(point.longitude)\n"
+            ret += "Time: \(point.time) -- Latitude: \(point.latitude) -- Longitude: \(point.longitude)\n"
         }
         
         return ret
     }
     
-    func getPathObj() {
+    func getPathObj() -> GMSMutablePath {
         let ret = GMSMutablePath()
         for point in points {
-            ret.add
+            ret.addCoordinate(CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude))
         }
+        return ret
+    }
+    
+    func getPathObj(time_delta : Double) -> GMSMutablePath {
+        let ret = GMSMutablePath()
+        for point in points {
+            if point.time > time_delta {
+                break
+            }
+            ret.addCoordinate(CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude))
+        }
+        return ret
     }
 }

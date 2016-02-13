@@ -21,6 +21,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var path: GMSMutablePath?
     var polyline: GMSPolyline?
+    var past_polyline: GMSPolyline?
     
     let start = NSDate()
     
@@ -43,6 +44,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         self.loadTrip()
+        self.timer.start()
     }
     
     private func initLocationServices() {
@@ -66,34 +68,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         let location:CLLocation = locations[locations.count-1] as CLLocation
         let newlongitude = location.coordinate.longitude
         let newlatitude = location.coordinate.latitude
-   
-        
-////////////////////// START TESTING PAST PATH   /////////////////////////
-        if past_trip != nil {
-            let past_trip_points = past_trip!.getPoints()
-            let currentTime = NSDate();
-            let timeInterval: Double = currentTime.timeIntervalSinceDate(start);
-            //// PAST PATH
-            // add to coord list
-            while(past_trip_points[pointIndex].time<timeInterval && pointIndex < past_trip_points.count-1){
-                
-                past_coord_list.append(CLLocationCoordinate2D(latitude: past_trip_points[pointIndex].latitude, longitude: past_trip_points[pointIndex].longitude))
-            
-                ++pointIndex
-            }
-            // add polyline
-            // NOTE: This adds a whole new polyline to the map each time instead of updating just one at a  time
-            let past_path = GMSMutablePath()
-            for coord in past_coord_list {
-                past_path.addCoordinate(coord)
-            }
-            let past_polyline = GMSPolyline(path: past_path)
-            past_polyline.strokeWidth = 5.0
-            past_polyline.strokeColor = UIColor(red: 0.0, green: 1.0, blue: 0.0, alpha: 1.0)
-            past_polyline.map = self.mapView
-            print("Finished drawing next point of past path")
-        }
-////////////////////// END TESTING PAST PATH   /////////////////////////
         
         if newlongitude == longitude && newlatitude == latitude {
             return
@@ -125,7 +99,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         addCoordinate(latitude, longitude: longitude)
-        updatePolyline()
+        updateCurrentPolyline()
+        updatePastPolyline()
     }
     
     func addCoordinate(latitude: Double, longitude: Double) {
@@ -148,14 +123,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    func updatePolyline() {
+    func updateCurrentPolyline() {
         if polyline != nil {
             polyline!.map = nil
         }
         polyline = GMSPolyline(path: path)
         polyline!.strokeWidth = 5.0
-        polyline!.strokeColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 1.0)
+        polyline!.strokeColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.5)
         polyline!.map = self.mapView
+    }
+    
+    func updatePastPolyline() {
+        if past_trip == nil {
+            return
+        }
+        let curr_time = timer.elapsed_seconds()
+        let past_path = past_trip!.getPathObj(curr_time)
+        print("Number of points before time \(curr_time) in past path: \(past_path.count())")
+        if past_polyline != nil {
+            past_polyline!.map = nil
+        }
+        past_polyline = GMSPolyline(path: past_path)
+        past_polyline!.strokeWidth = 5.0
+        past_polyline!.strokeColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        past_polyline!.map = self.mapView
     }
     
     func loadTrip() {
