@@ -15,11 +15,12 @@
 		50A0DEC21C66698400BA4330 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0DEC11C66698400BA4330 /* Point.swift */; };
 		50A0DEC41C66748300BA4330 /* FileSaveStaticData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0DEC31C66748300BA4330 /* FileSaveStaticData.swift */; };
 		50C136411C541555000F93FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C136401C541555000F93FA /* AppDelegate.swift */; };
-		50C136431C541555000F93FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C136421C541555000F93FA /* ViewController.swift */; };
+		50C136431C541555000F93FA /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C136421C541555000F93FA /* MapController.swift */; };
 		50C136461C541555000F93FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C136441C541555000F93FA /* Main.storyboard */; };
 		50C136481C541555000F93FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C136471C541555000F93FA /* Assets.xcassets */; };
 		50C1364B1C541555000F93FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C136491C541555000F93FA /* LaunchScreen.storyboard */; };
 		50C136561C541555000F93FA /* MapsTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C136551C541555000F93FA /* MapsTutorialTests.swift */; };
+		8DA0C4C21C8A274100AA56DB /* StartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA0C4C11C8A274100AA56DB /* StartPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,7 @@
 		50A0DEC31C66748300BA4330 /* FileSaveStaticData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSaveStaticData.swift; sourceTree = "<group>"; };
 		50C1363D1C541555000F93FA /* MapsTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapsTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C136401C541555000F93FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50C136421C541555000F93FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		50C136421C541555000F93FA /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		50C136451C541555000F93FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50C136471C541555000F93FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50C1364A1C541555000F93FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +52,7 @@
 		50C136511C541555000F93FA /* MapsTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapsTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C136551C541555000F93FA /* MapsTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsTutorialTests.swift; sourceTree = "<group>"; };
 		50C136571C541555000F93FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DA0C4C11C8A274100AA56DB /* StartPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPage.swift; sourceTree = "<group>"; };
 		F311C516D31A516CECDB293D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,7 +107,8 @@
 			isa = PBXGroup;
 			children = (
 				50C136401C541555000F93FA /* AppDelegate.swift */,
-				50C136421C541555000F93FA /* ViewController.swift */,
+				50C136421C541555000F93FA /* MapController.swift */,
+				8DA0C4C11C8A274100AA56DB /* StartPage.swift */,
 				506958D11C6FC222005B4459 /* Timer.swift */,
 				50A0DEBB1C66664400BA4330 /* Connection.swift */,
 				50A0DEBD1C66685400BA4330 /* Path.swift */,
@@ -291,12 +294,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A0DEC01C66695400BA4330 /* Trip.swift in Sources */,
-				50C136431C541555000F93FA /* ViewController.swift in Sources */,
+				50C136431C541555000F93FA /* MapController.swift in Sources */,
 				50A0DEC21C66698400BA4330 /* Point.swift in Sources */,
 				50A0DEBC1C66664400BA4330 /* Connection.swift in Sources */,
 				50A0DEC41C66748300BA4330 /* FileSaveStaticData.swift in Sources */,
 				50A0DEBE1C66685400BA4330 /* Path.swift in Sources */,
 				50C136411C541555000F93FA /* AppDelegate.swift in Sources */,
+				8DA0C4C21C8A274100AA56DB /* StartPage.swift in Sources */,
 				506958D21C6FC222005B4459 /* Timer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

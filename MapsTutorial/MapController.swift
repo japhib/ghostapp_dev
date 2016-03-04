@@ -10,7 +10,9 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class MapController: UIViewController, CLLocationManagerDelegate {
+    
+    @IBOutlet weak var subMapView: GMSMapView!
     
     var locationManager: CLLocationManager!
     var mapView: GMSMapView?
@@ -36,7 +38,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("map controller")
         if (CLLocationManager.locationServicesEnabled()) {
             initLocationServices()
         } else {
@@ -54,10 +56,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
-        self.mapView = GMSMapView.mapWithFrame(CGRectZero, camera: nil)
-        self.mapView!.myLocationEnabled = true
-        self.mapView!.settings.myLocationButton = true
-        self.view = mapView
+        let camera = GMSCameraPosition.cameraWithLatitude(37.33766286,
+            longitude: -122.03305549, zoom: 12)
+        
+        self.subMapView.camera = camera
+        self.subMapView!.myLocationEnabled = true
+        self.subMapView!.settings.myLocationButton = true
+//        self.view = mapView
     }
     
 
@@ -81,14 +86,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         // First time we update location, center camera on user's current location
         if !initial_update {
             let newPosition = GMSCameraPosition.cameraWithLatitude(latitude, longitude: longitude, zoom: initial_zoom)
-            self.mapView?.camera = newPosition
+            self.subMapView?.camera = newPosition
             initial_update = true
         }
         
         // Init marker if it hasn't been init'ed already
         if self.marker == nil {
             self.marker = GMSMarker()
-            self.marker!.map = mapView
+            self.marker!.map = subMapView
         }
         
         // update marker position
@@ -130,7 +135,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         polyline = GMSPolyline(path: path)
         polyline!.strokeWidth = 5.0
         polyline!.strokeColor = UIColor(red: 0.0, green: 0.0, blue: 1.0, alpha: 0.5)
-        polyline!.map = self.mapView
+        polyline!.map = self.subMapView
     }
     
     func updatePastPolyline() {
@@ -146,7 +151,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         past_polyline = GMSPolyline(path: past_path)
         past_polyline!.strokeWidth = 5.0
         past_polyline!.strokeColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
-        past_polyline!.map = self.mapView
+        past_polyline!.map = self.subMapView
     }
     
     func loadTrip() {
