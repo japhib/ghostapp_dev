@@ -1,22 +1,36 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="itE-hP-w7N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="itE-hP-w7N">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Start Page-->
         <scene sceneID="jY5-Nq-VZo">
             <objects>
                 <viewController id="itE-hP-w7N" customClass="StartPage" sceneMemberID="viewController">
-                    <button key="view" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EiK-4c-c7o">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D0k-bn-YbW"/>
+                        <viewControllerLayoutGuide type="bottom" id="1DM-43-PNs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Gba-2t-STr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Button"/>
-                        <connections>
-                            <segue destination="BYZ-38-t0r" kind="show" id="BTe-cO-osb"/>
-                        </connections>
-                    </button>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsV-bM-VNA">
+                                <rect key="frame" x="184" y="686" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.97843254239001798" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.25005159316051717" green="0.25556344696969702" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="PQR-ae-oiD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.04099187813331151" green="0.0018299291680252683" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2h-8J-6e7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -41,13 +55,16 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNw-Er-nmW">
                                 <rect key="frame" x="192" y="39" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.010051519906341788" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.95563865439999995" green="1" blue="0.95703810389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Stop"/>
                                 <connections>
+                                    <action selector="stopButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="DSo-SU-LOS"/>
                                     <segue destination="itE-hP-w7N" kind="show" id="SYc-dN-OIw"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="1" blue="0.92976369128776604" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>

@@ -53,7 +53,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
         let camera = GMSCameraPosition.cameraWithLatitude(37.33766286,
@@ -65,9 +65,10 @@ class MapController: UIViewController, CLLocationManagerDelegate {
 //        self.view = mapView
     }
     
-
     var pointIndex = 0
     
+    /** Method called each time we get a new GPS location update
+     */
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // start timer for tracking the amount of time elapsed from start to current location
         let location:CLLocation = locations[locations.count-1] as CLLocation
@@ -163,6 +164,10 @@ class MapController: UIViewController, CLLocationManagerDelegate {
             print("Loaded a trip!")
             print(self.past_trip!.toString())
         }
+    }
+    
+    @IBAction func stopButtonPressed() {
+        locationManager.stopUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
