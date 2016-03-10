@@ -14,6 +14,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var subMapView: GMSMapView!
     
+    var selectedTrip:Int?
     var locationManager: CLLocationManager!
     var mapView: GMSMapView?
     var latitude: Double = 0.0
@@ -38,7 +39,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("map controller")
+        print("map controller Selected Trip: \(selectedTrip!)")
         if (CLLocationManager.locationServicesEnabled()) {
             initLocationServices()
         } else {
@@ -116,11 +117,20 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         // add to trip object
         self.curr_trip.addPoint(Point(time: curr_time, latitude: latitude, longitude: longitude))
         // save
-        saveTrip()
+//      saveTrip()
     }
     
     func saveTrip() {
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(self.curr_trip, toFile: FileSaveStaticData.ArchiveURL.path!)
+        
+        var trips = NSKeyedUnarchiver.unarchiveObjectWithFile(FileSaveStaticData.ArchiveURL.path!) as? [Trip]
+        
+        if(trips == nil){
+            trips = [Trip]()
+        }
+        
+        trips!.append(self.curr_trip)
+       
+        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject( trips!, toFile: FileSaveStaticData.ArchiveURL.path!)
         if !isSuccessfulSave {
             print("Failed to save meals...")
         }
@@ -156,17 +166,23 @@ class MapController: UIViewController, CLLocationManagerDelegate {
     }
     
     func loadTrip() {
-        self.past_trip = NSKeyedUnarchiver.unarchiveObjectWithFile(FileSaveStaticData.ArchiveURL.path!) as? Trip
+        var trips = NSKeyedUnarchiver.unarchiveObjectWithFile(FileSaveStaticData.ArchiveURL.path!) as? [Trip]
+        //        self.past_trip = NSKeyedUnarchiver.unarchiveObjectWithFile(FileSaveStaticData.ArchiveURL.path!) as? Trip
         
-        if self.past_trip == nil {
-            print("No Trip found to load.")
+        if trips == nil {
+            print("No Trips found to load.")
         } else {
-            print("Loaded a trip!")
+            print("Loaded a trip! at index: \(selectedTrip!)")
+            if(selectedTrip == nil){
+                selectedTrip = 0
+            }
+            self.past_trip = trips![selectedTrip!]
             print(self.past_trip!.toString())
         }
     }
     
     @IBAction func stopButtonPressed() {
+        saveTrip()
         locationManager.stopUpdatingLocation()
     }
 
