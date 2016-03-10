@@ -20,16 +20,15 @@
 		50C136481C541555000F93FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C136471C541555000F93FA /* Assets.xcassets */; };
 		50C136561C541555000F93FA /* MapsTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C136551C541555000F93FA /* MapsTutorialTests.swift */; };
 		8DA0C4C21C8A274100AA56DB /* StartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA0C4C11C8A274100AA56DB /* StartPage.swift */; };
-		FC2D5EEA1C8B6BDD00D441D3 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2D5EE91C8B6BDD00D441D3 /* Default-iPhone6Plus.png */; };
 		FC2D5EEC1C8B6C6400D441D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2D5EEB1C8B6C6400D441D3 /* Default-568h@2x.png */; };
-		FC2D5EF21C8B704A00D441D3 /* ghost-logo-no-background.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2D5EF11C8B704A00D441D3 /* ghost-logo-no-background.png */; };
-		FC2D5EF41C8B725000D441D3 /* Default-iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2D5EF31C8B725000D441D3 /* Default-iPhone6.png */; };
-		FC2D5EF61C8B78A100D441D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2D5EF51C8B78A100D441D3 /* Default-568h@2x.png */; };
-		FCF503511C90EF94000A2E16 /* Icon-60@2x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF5034C1C90EF94000A2E16 /* Icon-60@2x-1.png */; };
-		FCF503521C90EF94000A2E16 /* Icon-60@2x-3.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF5034D1C90EF94000A2E16 /* Icon-60@2x-3.png */; };
-		FCF503531C90EF94000A2E16 /* Icon-60@2x-4.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF5034E1C90EF94000A2E16 /* Icon-60@2x-4.png */; };
-		FCF503541C90EF94000A2E16 /* Icon-60@2x-5.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF5034F1C90EF94000A2E16 /* Icon-60@2x-5.png */; };
-		FCF503551C90EF94000A2E16 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF503501C90EF94000A2E16 /* Icon-60@2x.png */; };
+		FCDF44081C90FB11009C6590 /* Icon-60@2x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = FCDF44031C90FB11009C6590 /* Icon-60@2x-1.png */; };
+		FCDF44091C90FB11009C6590 /* Icon-60@2x-3.png in Resources */ = {isa = PBXBuildFile; fileRef = FCDF44041C90FB11009C6590 /* Icon-60@2x-3.png */; };
+		FCDF440A1C90FB11009C6590 /* Icon-60@2x-4.png in Resources */ = {isa = PBXBuildFile; fileRef = FCDF44051C90FB11009C6590 /* Icon-60@2x-4.png */; };
+		FCDF440B1C90FB11009C6590 /* Icon-60@2x-5.png in Resources */ = {isa = PBXBuildFile; fileRef = FCDF44061C90FB11009C6590 /* Icon-60@2x-5.png */; };
+		FCDF440C1C90FB11009C6590 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCDF44071C90FB11009C6590 /* Icon-60@2x.png */; };
+		FCDF44101C90FB1C009C6590 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCDF440D1C90FB1C009C6590 /* Default-568h@2x.png */; };
+		FCDF44111C90FB1C009C6590 /* Default-iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = FCDF440E1C90FB1C009C6590 /* Default-iPhone6.png */; };
+		FCDF44121C90FB1C009C6590 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = FCDF440F1C90FB1C009C6590 /* Default-iPhone6Plus.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,16 +61,15 @@
 		50C136571C541555000F93FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DA0C4C11C8A274100AA56DB /* StartPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPage.swift; sourceTree = "<group>"; };
 		F311C516D31A516CECDB293D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC2D5EE91C8B6BDD00D441D3 /* Default-iPhone6Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPhone6Plus.png"; sourceTree = "<group>"; };
 		FC2D5EEB1C8B6C6400D441D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FC2D5EF11C8B704A00D441D3 /* ghost-logo-no-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ghost-logo-no-background.png"; path = "../ui-design/ghost-logo-no-background.png"; sourceTree = "<group>"; };
-		FC2D5EF31C8B725000D441D3 /* Default-iPhone6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-iPhone6.png"; path = "../ui-design/launch/Default-iPhone6.png"; sourceTree = "<group>"; };
-		FC2D5EF51C8B78A100D441D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../ui-design/launch/Default-568h@2x.png"; sourceTree = "<group>"; };
-		FCF5034C1C90EF94000A2E16 /* Icon-60@2x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-1.png"; path = "../ui-design/icons/Icon-60@2x-1.png"; sourceTree = "<group>"; };
-		FCF5034D1C90EF94000A2E16 /* Icon-60@2x-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-3.png"; path = "../ui-design/icons/Icon-60@2x-3.png"; sourceTree = "<group>"; };
-		FCF5034E1C90EF94000A2E16 /* Icon-60@2x-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-4.png"; path = "../ui-design/icons/Icon-60@2x-4.png"; sourceTree = "<group>"; };
-		FCF5034F1C90EF94000A2E16 /* Icon-60@2x-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-5.png"; path = "../ui-design/icons/Icon-60@2x-5.png"; sourceTree = "<group>"; };
-		FCF503501C90EF94000A2E16 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "../ui-design/icons/Icon-60@2x.png"; sourceTree = "<group>"; };
+		FCDF44031C90FB11009C6590 /* Icon-60@2x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-1.png"; path = "icons/Icon-60@2x-1.png"; sourceTree = "<group>"; };
+		FCDF44041C90FB11009C6590 /* Icon-60@2x-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-3.png"; path = "icons/Icon-60@2x-3.png"; sourceTree = "<group>"; };
+		FCDF44051C90FB11009C6590 /* Icon-60@2x-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-4.png"; path = "icons/Icon-60@2x-4.png"; sourceTree = "<group>"; };
+		FCDF44061C90FB11009C6590 /* Icon-60@2x-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-5.png"; path = "icons/Icon-60@2x-5.png"; sourceTree = "<group>"; };
+		FCDF44071C90FB11009C6590 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "icons/Icon-60@2x.png"; sourceTree = "<group>"; };
+		FCDF440D1C90FB1C009C6590 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "images/Default-568h@2x.png"; sourceTree = "<group>"; };
+		FCDF440E1C90FB1C009C6590 /* Default-iPhone6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-iPhone6.png"; path = "images/Default-iPhone6.png"; sourceTree = "<group>"; };
+		FCDF440F1C90FB1C009C6590 /* Default-iPhone6Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-iPhone6Plus.png"; path = "images/Default-iPhone6Plus.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,10 +162,9 @@
 		FC2D5EE51C8B67F600D441D3 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				FC2D5EF51C8B78A100D441D3 /* Default-568h@2x.png */,
-				FC2D5EF31C8B725000D441D3 /* Default-iPhone6.png */,
-				FC2D5EF11C8B704A00D441D3 /* ghost-logo-no-background.png */,
-				FC2D5EE91C8B6BDD00D441D3 /* Default-iPhone6Plus.png */,
+				FCDF440D1C90FB1C009C6590 /* Default-568h@2x.png */,
+				FCDF440E1C90FB1C009C6590 /* Default-iPhone6.png */,
+				FCDF440F1C90FB1C009C6590 /* Default-iPhone6Plus.png */,
 			);
 			name = images;
 			sourceTree = "<group>";
@@ -175,11 +172,11 @@
 		FC2D5EE61C8B69AF00D441D3 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				FCF5034C1C90EF94000A2E16 /* Icon-60@2x-1.png */,
-				FCF5034D1C90EF94000A2E16 /* Icon-60@2x-3.png */,
-				FCF5034E1C90EF94000A2E16 /* Icon-60@2x-4.png */,
-				FCF5034F1C90EF94000A2E16 /* Icon-60@2x-5.png */,
-				FCF503501C90EF94000A2E16 /* Icon-60@2x.png */,
+				FCDF44031C90FB11009C6590 /* Icon-60@2x-1.png */,
+				FCDF44041C90FB11009C6590 /* Icon-60@2x-3.png */,
+				FCDF44051C90FB11009C6590 /* Icon-60@2x-4.png */,
+				FCDF44061C90FB11009C6590 /* Icon-60@2x-5.png */,
+				FCDF44071C90FB11009C6590 /* Icon-60@2x.png */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -269,18 +266,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCF503541C90EF94000A2E16 /* Icon-60@2x-5.png in Resources */,
 				50C136481C541555000F93FA /* Assets.xcassets in Resources */,
-				FCF503521C90EF94000A2E16 /* Icon-60@2x-3.png in Resources */,
-				FC2D5EF41C8B725000D441D3 /* Default-iPhone6.png in Resources */,
-				FC2D5EEA1C8B6BDD00D441D3 /* Default-iPhone6Plus.png in Resources */,
-				FCF503531C90EF94000A2E16 /* Icon-60@2x-4.png in Resources */,
 				50C136461C541555000F93FA /* Main.storyboard in Resources */,
-				FC2D5EF61C8B78A100D441D3 /* Default-568h@2x.png in Resources */,
+				FCDF44101C90FB1C009C6590 /* Default-568h@2x.png in Resources */,
+				FCDF44111C90FB1C009C6590 /* Default-iPhone6.png in Resources */,
+				FCDF44121C90FB1C009C6590 /* Default-iPhone6Plus.png in Resources */,
 				FC2D5EEC1C8B6C6400D441D3 /* Default-568h@2x.png in Resources */,
-				FC2D5EF21C8B704A00D441D3 /* ghost-logo-no-background.png in Resources */,
-				FCF503511C90EF94000A2E16 /* Icon-60@2x-1.png in Resources */,
-				FCF503551C90EF94000A2E16 /* Icon-60@2x.png in Resources */,
+				FCDF440B1C90FB11009C6590 /* Icon-60@2x-5.png in Resources */,
+				FCDF44081C90FB11009C6590 /* Icon-60@2x-1.png in Resources */,
+				FCDF440A1C90FB11009C6590 /* Icon-60@2x-4.png in Resources */,
+				FCDF44091C90FB11009C6590 /* Icon-60@2x-3.png in Resources */,
+				FCDF440C1C90FB11009C6590 /* Icon-60@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
