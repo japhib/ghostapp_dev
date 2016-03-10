@@ -18,9 +18,18 @@
 		50C136431C541555000F93FA /* MapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C136421C541555000F93FA /* MapController.swift */; };
 		50C136461C541555000F93FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C136441C541555000F93FA /* Main.storyboard */; };
 		50C136481C541555000F93FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C136471C541555000F93FA /* Assets.xcassets */; };
-		50C1364B1C541555000F93FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50C136491C541555000F93FA /* LaunchScreen.storyboard */; };
 		50C136561C541555000F93FA /* MapsTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C136551C541555000F93FA /* MapsTutorialTests.swift */; };
 		8DA0C4C21C8A274100AA56DB /* StartPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA0C4C11C8A274100AA56DB /* StartPage.swift */; };
+		FC2D5EEA1C8B6BDD00D441D3 /* Default-iPhone6Plus.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2D5EE91C8B6BDD00D441D3 /* Default-iPhone6Plus.png */; };
+		FC2D5EEC1C8B6C6400D441D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2D5EEB1C8B6C6400D441D3 /* Default-568h@2x.png */; };
+		FC2D5EF21C8B704A00D441D3 /* ghost-logo-no-background.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2D5EF11C8B704A00D441D3 /* ghost-logo-no-background.png */; };
+		FC2D5EF41C8B725000D441D3 /* Default-iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2D5EF31C8B725000D441D3 /* Default-iPhone6.png */; };
+		FC2D5EF61C8B78A100D441D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FC2D5EF51C8B78A100D441D3 /* Default-568h@2x.png */; };
+		FCF503511C90EF94000A2E16 /* Icon-60@2x-1.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF5034C1C90EF94000A2E16 /* Icon-60@2x-1.png */; };
+		FCF503521C90EF94000A2E16 /* Icon-60@2x-3.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF5034D1C90EF94000A2E16 /* Icon-60@2x-3.png */; };
+		FCF503531C90EF94000A2E16 /* Icon-60@2x-4.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF5034E1C90EF94000A2E16 /* Icon-60@2x-4.png */; };
+		FCF503541C90EF94000A2E16 /* Icon-60@2x-5.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF5034F1C90EF94000A2E16 /* Icon-60@2x-5.png */; };
+		FCF503551C90EF94000A2E16 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FCF503501C90EF94000A2E16 /* Icon-60@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,13 +56,22 @@
 		50C136421C541555000F93FA /* MapController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapController.swift; sourceTree = "<group>"; };
 		50C136451C541555000F93FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50C136471C541555000F93FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		50C1364A1C541555000F93FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50C1364C1C541555000F93FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C136511C541555000F93FA /* MapsTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapsTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C136551C541555000F93FA /* MapsTutorialTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsTutorialTests.swift; sourceTree = "<group>"; };
 		50C136571C541555000F93FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DA0C4C11C8A274100AA56DB /* StartPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartPage.swift; sourceTree = "<group>"; };
 		F311C516D31A516CECDB293D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC2D5EE91C8B6BDD00D441D3 /* Default-iPhone6Plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-iPhone6Plus.png"; sourceTree = "<group>"; };
+		FC2D5EEB1C8B6C6400D441D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		FC2D5EF11C8B704A00D441D3 /* ghost-logo-no-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ghost-logo-no-background.png"; path = "../ui-design/ghost-logo-no-background.png"; sourceTree = "<group>"; };
+		FC2D5EF31C8B725000D441D3 /* Default-iPhone6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-iPhone6.png"; path = "../ui-design/launch/Default-iPhone6.png"; sourceTree = "<group>"; };
+		FC2D5EF51C8B78A100D441D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../ui-design/launch/Default-568h@2x.png"; sourceTree = "<group>"; };
+		FCF5034C1C90EF94000A2E16 /* Icon-60@2x-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-1.png"; path = "../ui-design/icons/Icon-60@2x-1.png"; sourceTree = "<group>"; };
+		FCF5034D1C90EF94000A2E16 /* Icon-60@2x-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-3.png"; path = "../ui-design/icons/Icon-60@2x-3.png"; sourceTree = "<group>"; };
+		FCF5034E1C90EF94000A2E16 /* Icon-60@2x-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-4.png"; path = "../ui-design/icons/Icon-60@2x-4.png"; sourceTree = "<group>"; };
+		FCF5034F1C90EF94000A2E16 /* Icon-60@2x-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x-5.png"; path = "../ui-design/icons/Icon-60@2x-5.png"; sourceTree = "<group>"; };
+		FCF503501C90EF94000A2E16 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-60@2x.png"; path = "../ui-design/icons/Icon-60@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +104,9 @@
 		50C136341C541555000F93FA = {
 			isa = PBXGroup;
 			children = (
+				FC2D5EEB1C8B6C6400D441D3 /* Default-568h@2x.png */,
+				FC2D5EE61C8B69AF00D441D3 /* icons */,
+				FC2D5EE51C8B67F600D441D3 /* images */,
 				50C1363F1C541555000F93FA /* MapsTutorial */,
 				50C136541C541555000F93FA /* MapsTutorialTests */,
 				50C1363E1C541555000F93FA /* Products */,
@@ -117,7 +138,6 @@
 				50A0DEC31C66748300BA4330 /* FileSaveStaticData.swift */,
 				50C136441C541555000F93FA /* Main.storyboard */,
 				50C136471C541555000F93FA /* Assets.xcassets */,
-				50C136491C541555000F93FA /* LaunchScreen.storyboard */,
 				50C1364C1C541555000F93FA /* Info.plist */,
 			);
 			path = MapsTutorial;
@@ -139,6 +159,29 @@
 				429645D8925D2BE174CC2DA1 /* Pods.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		FC2D5EE51C8B67F600D441D3 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				FC2D5EF51C8B78A100D441D3 /* Default-568h@2x.png */,
+				FC2D5EF31C8B725000D441D3 /* Default-iPhone6.png */,
+				FC2D5EF11C8B704A00D441D3 /* ghost-logo-no-background.png */,
+				FC2D5EE91C8B6BDD00D441D3 /* Default-iPhone6Plus.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		FC2D5EE61C8B69AF00D441D3 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				FCF5034C1C90EF94000A2E16 /* Icon-60@2x-1.png */,
+				FCF5034D1C90EF94000A2E16 /* Icon-60@2x-3.png */,
+				FCF5034E1C90EF94000A2E16 /* Icon-60@2x-4.png */,
+				FCF5034F1C90EF94000A2E16 /* Icon-60@2x-5.png */,
+				FCF503501C90EF94000A2E16 /* Icon-60@2x.png */,
+			);
+			name = icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +237,7 @@
 				TargetAttributes = {
 					50C1363C1C541555000F93FA = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = WQLVR2JC6C;
 					};
 					50C136501C541555000F93FA = {
 						CreatedOnToolsVersion = 7.2;
@@ -225,9 +269,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C1364B1C541555000F93FA /* LaunchScreen.storyboard in Resources */,
+				FCF503541C90EF94000A2E16 /* Icon-60@2x-5.png in Resources */,
 				50C136481C541555000F93FA /* Assets.xcassets in Resources */,
+				FCF503521C90EF94000A2E16 /* Icon-60@2x-3.png in Resources */,
+				FC2D5EF41C8B725000D441D3 /* Default-iPhone6.png in Resources */,
+				FC2D5EEA1C8B6BDD00D441D3 /* Default-iPhone6Plus.png in Resources */,
+				FCF503531C90EF94000A2E16 /* Icon-60@2x-4.png in Resources */,
 				50C136461C541555000F93FA /* Main.storyboard in Resources */,
+				FC2D5EF61C8B78A100D441D3 /* Default-568h@2x.png in Resources */,
+				FC2D5EEC1C8B6C6400D441D3 /* Default-568h@2x.png in Resources */,
+				FC2D5EF21C8B704A00D441D3 /* ghost-logo-no-background.png in Resources */,
+				FCF503511C90EF94000A2E16 /* Icon-60@2x-1.png in Resources */,
+				FCF503551C90EF94000A2E16 /* Icon-60@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,14 +385,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		50C136491C541555000F93FA /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50C1364A1C541555000F93FA /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -429,10 +474,15 @@
 			baseConfigurationReference = 184AF157DE9434BA20AF36BD /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MapsTutorial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jan.learn.MapsTutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -441,10 +491,15 @@
 			baseConfigurationReference = 429645D8925D2BE174CC2DA1 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MapsTutorial/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jan.learn.MapsTutorial;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
