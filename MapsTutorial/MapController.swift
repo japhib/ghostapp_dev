@@ -155,14 +155,30 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         }
         let curr_time = timer.elapsed_seconds()
         let past_path = past_trip!.getPathObj(curr_time)
+        
         print("Number of points before time \(curr_time) in past path: \(past_path.count())")
+        if past_polyline != nil {
+            past_polyline!.map = nil
+        }
+//        drawFullPastPath()
+        past_polyline = GMSPolyline(path: past_path)
+        past_polyline!.strokeWidth = 5.0
+        past_polyline!.strokeColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        past_polyline!.map = self.subMapView
+    }
+    
+    func drawFullPastPath(){
+        let past_path = past_trip!.getPathObj()
+        
         if past_polyline != nil {
             past_polyline!.map = nil
         }
         past_polyline = GMSPolyline(path: past_path)
         past_polyline!.strokeWidth = 5.0
-        past_polyline!.strokeColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
+        past_polyline!.strokeColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
         past_polyline!.map = self.subMapView
+
+        
     }
     
     func loadTrip() {
