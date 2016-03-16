@@ -76,11 +76,6 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         let newlongitude = location.coordinate.longitude
         let newlatitude = location.coordinate.latitude
         
-        if newlongitude == longitude && newlatitude == latitude {
-            return
-        }
-        // else, update position on map
-        
         latitude = newlatitude
         longitude = newlongitude
        // print("\(latitude) \n \(longitude)")
@@ -156,17 +151,17 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         let curr_time = timer.elapsed_seconds()
         let past_path = past_trip!.getPathObj(curr_time)
         
-        print("Number of points before time \(curr_time) in past path: \(past_path.count())")
+        print("Number of points before time \(curr_time) in past path: \(past_path.count()) of \(past_trip!.points.count)")
         if past_polyline != nil {
             past_polyline!.map = nil
         }
-//        drawFullPastPath()
+        drawFullPastPath()
         past_polyline = GMSPolyline(path: past_path)
         past_polyline!.strokeWidth = 5.0
         past_polyline!.strokeColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
         past_polyline!.map = self.subMapView
     }
-    
+////////////////
     func drawFullPastPath(){
         let past_path = past_trip!.getPathObj()
         
@@ -175,7 +170,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         }
         past_polyline = GMSPolyline(path: past_path)
         past_polyline!.strokeWidth = 5.0
-        past_polyline!.strokeColor = UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 0.2)
+        past_polyline!.strokeColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
         past_polyline!.map = self.subMapView
 
         

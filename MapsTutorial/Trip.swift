@@ -46,6 +46,7 @@ class Trip : NSObject, NSCoding {
     }
 
     func addPoint(point: Point){
+        print("added a point")
         points.append(point)
     }
     

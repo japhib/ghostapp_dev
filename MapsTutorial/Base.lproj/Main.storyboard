@@ -67,7 +67,7 @@
                                 <state key="normal" title="Stop"/>
                                 <connections>
                                     <action selector="stopButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="DSo-SU-LOS"/>
-                                    <segue destination="itE-hP-w7N" kind="show" id="SYc-dN-OIw"/>
+                                    <segue destination="ub3-2Z-D5e" kind="show" id="yFz-yB-FRs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,6 +81,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749" y="98"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="D6Y-rK-dpM">
+            <objects>
+                <viewController id="ub3-2Z-D5e" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MYo-fe-mmV"/>
+                        <viewControllerLayoutGuide type="bottom" id="vSa-nc-J4G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ReV-8u-ig3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eT2-rm-gr6">
+                                <rect key="frame" x="184" y="236" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="itE-hP-w7N" kind="show" id="WqQ-Xd-5c9"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sQc-Aq-HY4">
+                                <rect key="frame" x="159" y="130" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ry3-fC-qit" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1272" y="98"/>
         </scene>
     </scenes>
 </document>
