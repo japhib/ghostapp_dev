@@ -13,36 +13,40 @@ class Trip : NSObject, NSCoding {
     
     var points : [Point]
     var timestamp : NSDate
+    var name: String
     
     struct PropertyKey {
         static let pointsKey = "points"
         static let timestampKey = "timestamp"
+        static let nameKey = "name"
     }
     
     override init() {
         points = [Point]()
         timestamp = NSDate() // gives timestamp of right now
-        
+        name = "No Name"
         super.init()
     }
     
-    convenience init(points: [Point], timestamp: NSDate) {
+    convenience init(points: [Point], timestamp: NSDate, name: String) {
         self.init()
 
         self.points = points
         self.timestamp = timestamp
+        self.name = name
     }
 
     required convenience init?(coder aDecoder: NSCoder) {
         let points = aDecoder.decodeObjectForKey(PropertyKey.pointsKey) as! [Point]
         let timestamp = aDecoder.decodeObjectForKey(PropertyKey.timestampKey) as! NSDate
-        
-        self.init(points: points, timestamp: timestamp)
+        let name = aDecoder.decodeObjectForKey(PropertyKey.nameKey) as! String
+        self.init(points: points, timestamp: timestamp, name: name)
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(points, forKey: PropertyKey.pointsKey)
         aCoder.encodeObject(timestamp, forKey: PropertyKey.timestampKey)
+        aCoder.encodeObject(name, forKey: PropertyKey.nameKey)
     }
 
     func addPoint(point: Point){
@@ -56,6 +60,15 @@ class Trip : NSObject, NSCoding {
     
     func updateTimestampNow() {
         timestamp = NSDate()
+    }
+    
+    func getName()->String{
+        return name
+    }
+    
+    func setTripName(inputName:String){
+        print("In Set name input name: "+inputName)
+        name = inputName
     }
     
     func getTimestamp() -> NSDate {

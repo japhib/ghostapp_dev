@@ -67,7 +67,16 @@
                                 <state key="normal" title="Stop"/>
                                 <connections>
                                     <action selector="stopButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="DSo-SU-LOS"/>
-                                    <segue destination="ub3-2Z-D5e" kind="show" id="yFz-yB-FRs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-Sr-dXD">
+                                <rect key="frame" x="192" y="39" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.010051519910000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.95563865439999995" green="1" blue="0.95703810389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Stop"/>
+                                <connections>
+                                    <action selector="stopButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9S-yY-bP0"/>
+                                    <segue destination="9tD-lm-f7B" kind="show" identifier="toNameTripController" id="Y0f-bL-o0u"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -82,38 +91,41 @@
             </objects>
             <point key="canvasLocation" x="749" y="98"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="D6Y-rK-dpM">
+        <!--Name Trip Controller-->
+        <scene sceneID="rxC-pc-H0m">
             <objects>
-                <viewController id="ub3-2Z-D5e" sceneMemberID="viewController">
+                <viewController id="9tD-lm-f7B" customClass="NameTripController" customModule="MapsTutorial" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MYo-fe-mmV"/>
-                        <viewControllerLayoutGuide type="bottom" id="vSa-nc-J4G"/>
+                        <viewControllerLayoutGuide type="top" id="IF1-gG-lEp"/>
+                        <viewControllerLayoutGuide type="bottom" id="kkG-pw-7zE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ReV-8u-ig3">
+                    <view key="view" contentMode="scaleToFill" id="QTR-FL-rg6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eT2-rm-gr6">
-                                <rect key="frame" x="184" y="236" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdQ-6v-Sgf">
+                                <rect key="frame" x="184" y="252" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="itE-hP-w7N" kind="show" id="WqQ-Xd-5c9"/>
+                                    <segue destination="itE-hP-w7N" kind="show" identifier="toStartPageController" id="krm-d5-prg"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sQc-Aq-HY4">
-                                <rect key="frame" x="159" y="130" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EpX-MC-I3h">
+                                <rect key="frame" x="184" y="113" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.99102217449999996" green="1" blue="0.78803239059999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="TripNameInput" destination="EpX-MC-I3h" id="8Vm-eF-d8T"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ry3-fC-qit" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SSY-mK-ZW2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1272" y="98"/>
+            <point key="canvasLocation" x="1202" y="98"/>
         </scene>
     </scenes>
 </document>

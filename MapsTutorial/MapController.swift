@@ -115,24 +115,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
 //      saveTrip()
     }
     
-    func saveTrip() {
-        
-        var trips = NSKeyedUnarchiver.unarchiveObjectWithFile(FileSaveStaticData.ArchiveURL.path!) as? [Trip]
-        
-        if(trips == nil){
-            trips = [Trip]()
-        }
-        
-        trips!.append(self.curr_trip)
-       
-        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject( trips!, toFile: FileSaveStaticData.ArchiveURL.path!)
-        if !isSuccessfulSave {
-            print("Failed to save meals...")
-        }
-        else {
-            print("Successful save!")
-        }
-    }
+
     
     func updateCurrentPolyline() {
         if polyline != nil {
@@ -191,7 +174,24 @@ class MapController: UIViewController, CLLocationManagerDelegate {
             print(self.past_trip!.toString())
         }
     }
-    
+    func saveTrip() {
+        
+//        var trips = NSKeyedUnarchiver.unarchiveObjectWithFile(FileSaveStaticData.ArchiveURL.path!) as? [Trip]
+//        
+//        if(trips == nil){
+//            trips = [Trip]()
+//        }
+//        
+//        trips!.append(self.curr_trip)
+//        
+//        let isSuccessfulSave = NSKeyedArchiver.archiveRootObject( trips!, toFile: FileSaveStaticData.ArchiveURL.path!)
+//        if !isSuccessfulSave {
+//            print("Failed to save meals...")
+//        }
+//        else {
+//            print("Successful save!")
+//        }
+    }
     @IBAction func stopButtonPressed() {
         saveTrip()
         locationManager.stopUpdatingLocation()
@@ -201,6 +201,27 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        var trips = NSKeyedUnarchiver.unarchiveObjectWithFile(FileSaveStaticData.ArchiveURL.path!) as? [Trip]
+        
+        if(trips == nil){
+            trips = [Trip]()
+        }
+        
+        trips!.append(self.curr_trip)
+       
+        print(trips!.last)
+        
+        if(segue.identifier == "toNameTripController") {
+            var nameTripController = (segue.destinationViewController as! NameTripController)
+            nameTripController.self.trips = trips!
+            nameTripController.self.test = "hello world"
+        }
+    }
+    
+    
 
 }
 
