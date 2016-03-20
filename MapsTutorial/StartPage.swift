@@ -41,7 +41,7 @@ class StartPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()
         let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:50))
-        label.text = "cell number: \(trips![indexPath.row].getName())!"
+        label.text = "\(trips![indexPath.row].getName())!"
         cell.addSubview(label)
         return cell
     }

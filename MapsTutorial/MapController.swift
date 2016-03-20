@@ -153,7 +153,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         }
         past_polyline = GMSPolyline(path: past_path)
         past_polyline!.strokeWidth = 5.0
-        past_polyline!.strokeColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.8)
+        past_polyline!.strokeColor = UIColor(red: 200.0/255, green: 200.0/255, blue: 200.0/255, alpha: 0.5)
         past_polyline!.map = self.subMapView
 
         
