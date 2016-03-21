@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="itE-hP-w7N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="itE-hP-w7N">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Start Page-->
@@ -17,23 +18,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-LC-eWX">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="709"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsV-bM-VNA">
-                                <rect key="frame" x="0.0" y="706" width="414" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="1" blue="0.052975194323212627" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.25005159316051717" green="0.25556344696969702" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toMapController" id="PQR-ae-oiD"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qez-Te-CRp">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="739"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-LC-eWX">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="709"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsV-bM-VNA">
+                                        <rect key="frame" x="0.0" y="709" width="414" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="0.052975194323212627" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.25005159316051717" green="0.25556344696969702" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Start">
+                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="toMapController" id="PQR-ae-oiD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.04099187813331151" green="0.0018299291680252683" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="qez-Te-CRp" firstAttribute="leading" secondItem="Gba-2t-STr" secondAttribute="leadingMargin" constant="-20" id="0sS-AM-8kD"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="qez-Te-CRp" secondAttribute="bottom" constant="-3" id="Eqb-Rx-wQt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qez-Te-CRp" secondAttribute="trailing" constant="-20" id="qR5-bn-vHu"/>
+                            <constraint firstItem="qez-Te-CRp" firstAttribute="top" secondItem="Gba-2t-STr" secondAttribute="topMargin" id="xod-yC-j7o"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
@@ -56,22 +68,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lbF-rW-mih" customClass="GMSMapView">
-                                <rect key="frame" x="0.0" y="46" width="414" height="690"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-Sr-dXD">
-                                <rect key="frame" x="0.0" y="20" width="414" height="28"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.010051519910000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.95563865439999995" green="1" blue="0.95703810389999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Stop"/>
-                                <connections>
-                                    <action selector="stopButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9S-yY-bP0"/>
-                                    <segue destination="9tD-lm-f7B" kind="show" identifier="toNameTripController" id="Y0f-bL-o0u"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DIE-YU-kZc">
+                                <rect key="frame" x="0.0" y="20" width="414" height="720"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKB-Sr-dXD">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.0" blue="0.010051519910000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.95563865439999995" green="1" blue="0.95703810389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopButtonPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="t9S-yY-bP0"/>
+                                            <segue destination="9tD-lm-f7B" kind="show" identifier="toNameTripController" id="Y0f-bL-o0u"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbF-rW-mih" customClass="GMSMapView">
+                                        <rect key="frame" x="0.0" y="30" width="414" height="690"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="0.92976369128776604" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DIE-YU-kZc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="C1x-6X-NBb"/>
+                            <constraint firstItem="DIE-YU-kZc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="CoI-ks-8GG"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="DIE-YU-kZc" secondAttribute="bottom" constant="-4" id="pyE-14-ZAA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DIE-YU-kZc" secondAttribute="trailing" constant="-20" id="sXg-zd-Pyt"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
@@ -94,26 +117,52 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EpX-MC-I3h">
-                                <rect key="frame" x="116" y="118" width="183" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdQ-6v-Sgf">
-                                <rect key="frame" x="184" y="164" width="46" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <segue destination="itE-hP-w7N" kind="show" identifier="toStartPageController" id="krm-d5-prg"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name your trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX3-CY-7mD">
-                                <rect key="frame" x="145" y="89" width="114" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="znz-LY-oEG">
+                                <rect key="frame" x="145" y="89" width="354" height="81"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name your trip" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jX3-CY-7mD">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="0f1-I4-nXg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EpX-MC-I3h">
+                                        <rect key="frame" x="2" y="21" width="350" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YdQ-6v-Sgf">
+                                        <rect key="frame" x="0.0" y="51" width="354" height="30"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <segue destination="itE-hP-w7N" kind="show" identifier="toStartPageController" id="krm-d5-prg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EpX-MC-I3h" firstAttribute="trailing" secondItem="znz-LY-oEG" secondAttribute="trailingMargin" constant="2" id="3Dw-9W-gb4"/>
+                                    <constraint firstItem="YdQ-6v-Sgf" firstAttribute="leading" secondItem="znz-LY-oEG" secondAttribute="leadingMargin" id="4ta-BV-nT3"/>
+                                    <constraint firstItem="YdQ-6v-Sgf" firstAttribute="bottom" secondItem="znz-LY-oEG" secondAttribute="bottomMargin" id="A6w-zf-M6Z"/>
+                                    <constraint firstAttribute="trailing" secondItem="EpX-MC-I3h" secondAttribute="trailing" id="LBV-pH-xAq"/>
+                                    <constraint firstItem="YdQ-6v-Sgf" firstAttribute="top" secondItem="EpX-MC-I3h" secondAttribute="bottom" id="Lib-px-NWw"/>
+                                    <constraint firstItem="EpX-MC-I3h" firstAttribute="leading" secondItem="znz-LY-oEG" secondAttribute="leadingMargin" constant="2" id="XDu-F6-XV4"/>
+                                    <constraint firstItem="YdQ-6v-Sgf" firstAttribute="trailing" secondItem="znz-LY-oEG" secondAttribute="trailingMargin" id="cVU-9V-slh"/>
+                                    <constraint firstItem="jX3-CY-7mD" firstAttribute="leading" secondItem="znz-LY-oEG" secondAttribute="leading" id="cyp-8U-Um2"/>
+                                    <constraint firstItem="YdQ-6v-Sgf" firstAttribute="leading" secondItem="znz-LY-oEG" secondAttribute="leading" id="dUV-fQ-qQW"/>
+                                    <constraint firstAttribute="trailing" secondItem="YdQ-6v-Sgf" secondAttribute="trailing" id="jsg-nf-vSG"/>
+                                    <constraint firstItem="EpX-MC-I3h" firstAttribute="leading" secondItem="znz-LY-oEG" secondAttribute="leading" id="rFb-yt-47J"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.99102217449999996" green="1" blue="0.78803239059999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="znz-LY-oEG" secondAttribute="trailing" constant="10" id="DPZ-tx-ze5"/>
+                            <constraint firstItem="znz-LY-oEG" firstAttribute="top" secondItem="IF1-gG-lEp" secondAttribute="bottom" constant="69" id="KNl-8C-1XS"/>
+                            <constraint firstItem="znz-LY-oEG" firstAttribute="leading" secondItem="QTR-FL-rg6" secondAttribute="leadingMargin" constant="10" id="OHf-RF-0Bm"/>
+                        </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
