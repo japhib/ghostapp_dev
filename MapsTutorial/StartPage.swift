@@ -41,7 +41,7 @@ class StartPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()
         let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:50))
-        label.text = "\(trips![indexPath.row].getName())!"
+        label.text = "\(trips![indexPath.row].getName())"
         cell.addSubview(label)
         return cell
     }
@@ -49,7 +49,7 @@ class StartPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // This is the delegate method and gets called when you click on a cell.
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedTrip = indexPath.row
-        print("You selected cell number: \(selectedTrip!)!")
+        print("You selected cell number: \(selectedTrip!)")
     }
     // This sends the index of the selected trip in through the segue to the next view. 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
