@@ -17,6 +17,7 @@ class NameTripController: UIViewController{
         print("this is name Trip Controller")
         print(self.trips.last)
         print(self.test)
+        [self.TripNameInput .becomeFirstResponder()];
     }
     
     
