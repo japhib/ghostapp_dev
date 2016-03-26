@@ -29,7 +29,6 @@ class MapController: UIViewController, CLLocationManagerDelegate {
     let start = NSDate()
     
     var coord_list: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
-    var past_coord_list: [CLLocationCoordinate2D] = [CLLocationCoordinate2D]()
     
     let initial_zoom: Float = 13.0
     
@@ -87,6 +86,8 @@ class MapController: UIViewController, CLLocationManagerDelegate {
             initial_update = true
         }
         
+        
+        
         // Init marker if it hasn't been init'ed already
         if self.marker == nil {
             self.marker = GMSMarker()
@@ -102,7 +103,17 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         
         addCoordinate(latitude, longitude: longitude)
         updateCurrentPolyline()
-        updatePastPolyline()
+        // update camera
+        let current_past_path_coordinate = updatePastPolyline()
+//        let bounds = GMSCoordinateBounds(coordinate: current_past_path_coordinate, coordinate: CLLocationCoordinate2DMake(latitude, longitude))
+//        print(bounds)
+//        let update = GMSCameraUpdate.fitBounds(bounds, withPadding: 10.0)
+//        self.subMapView.moveCamera(update)
+//        print(camera)
+//        if(camera != nil){
+//            print("workin on bounds dog!")
+////            self.subMapView.camera = camera!
+//        }
     }
     
     func addCoordinate(latitude: Double, longitude: Double) {
@@ -127,12 +138,17 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         polyline!.map = self.subMapView
     }
     
-    func updatePastPolyline() {
+    func updatePastPolyline()->CLLocationCoordinate2D{
+
         if past_trip == nil {
-            return
+            return curr_trip.getPathObj().coordinateAtIndex(curr_trip.getPathObj().count())
         }
+        
+        
         let curr_time = timer.elapsed_seconds()
         let past_path = past_trip!.getPathObj(curr_time)
+        
+
         
         print("Number of points before time \(curr_time) in past path: \(past_path.count()) of \(past_trip!.points.count)")
         if past_polyline != nil {
@@ -143,6 +159,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         past_polyline!.strokeWidth = 5.0
         past_polyline!.strokeColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
         past_polyline!.map = self.subMapView
+        return past_path.coordinateAtIndex(past_path.count())
     }
 ////////////////
     func drawFullPastPath(){

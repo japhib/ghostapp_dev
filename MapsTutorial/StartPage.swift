@@ -103,12 +103,9 @@ class StartPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
         passwordPrompt.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default, handler: nil))
         passwordPrompt.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action) -> Void in
             // Now do whatever you want with inputTextField (remember to unwrap the optional)
-            print("input String: "+inputTextField!.text!)
+            
+            //set text in input field to text of the trip in the trips array
             self.trips![indexPath.row].setTripName(inputTextField!.text!)
-            
-            let cell = tableView.cellForRowAtIndexPath(indexPath)
-            cell?.textLabel!.text = inputTextField!.text!
-            
             
             //save edited trips array to file
             let isSuccessfulSave = NSKeyedArchiver.archiveRootObject( self.trips!, toFile: FileSaveStaticData.ArchiveURL.path!)
@@ -118,6 +115,11 @@ class StartPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
             else {
                 print("Successful save!")
             }
+            
+            // reload the cell in the view
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation:UITableViewRowAnimation.Right)
+            
+
             
         }))
         passwordPrompt.addTextFieldWithConfigurationHandler({(textField: UITextField!) in
