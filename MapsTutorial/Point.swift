@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class Point : NSObject, NSCoding {
     
@@ -41,8 +42,11 @@ class Point : NSObject, NSCoding {
     }
     
     // in miles
-    static func distBetweenPoints(point1: Point, point2: Point) -> Double {
-        // http://www.movable-type.co.uk/scripts/latlong.html
+    func distFromPoint(other: Point) -> Double {
+        let thisone = CLLocation(latitude: self.latitude, longitude: self.longitude)
+        let otherone = CLLocation(latitude: other.latitude, longitude: other.longitude)
+        let clLocDist = thisone.distanceFromLocation(otherone) // in meters
+        return clLocDist * 0.000621371;
     }
     
 }
