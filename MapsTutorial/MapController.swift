@@ -12,6 +12,7 @@ import CoreLocation
 
 class MapController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var statusLbl: UILabel!
     @IBOutlet weak var subMapView: GMSMapView!
     
     var selectedTrip:Int?
@@ -114,6 +115,9 @@ class MapController: UIViewController, CLLocationManagerDelegate {
 //            print("workin on bounds dog!")
 ////            self.subMapView.camera = camera!
 //        }
+        let tripstats = TripStats(ghost: self.past_trip!, current: self.curr_trip)
+        print(tripstats.toString())
+        statusLbl.text = tripstats.getStatusStr()
     }
     
     func addCoordinate(latitude: Double, longitude: Double) {

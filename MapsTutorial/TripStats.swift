@@ -30,10 +30,6 @@ class TripStats {
         self.ghost = ghost
         self.current = current
         
-        calculate()
-    }
-    
-    func calculate() {
         total_dist = ghost.getTotalDist()
         curr_dist = current.getTotalDist()
         curr_latest_time = current.getTotalTime()
@@ -44,9 +40,39 @@ class TripStats {
     }
     
     func toString() -> String {
-        let ret = "Stats for the trip:"
-        + "\ntotal distance: " + total_dist
-        + "\ncurrent distance: " + current_distance
+        var ret = "Stats for the trip:"
+        ret += "\ntotal distance: \(total_dist)"
+        ret += "\ncurrent distance: \(curr_dist)"
+        ret += "\nghost distance: \(ghost_dist)"
+        
+        ret += "\n\ncurrent percent distance: \(curr_percent_dist)"
+        ret += "\nghost percent distance: \(ghost_percent_dist)"
+        
+        ret += "\n\n" + getStatusStr()
+        
+        return ret
+    }
+    
+    func getStatusStr() -> String {
+        var dist_diff = ghost_dist - curr_dist
+        var direction = ""
+        if dist_diff > 0 {
+            direction = "behind"
+        }
+        else {
+            dist_diff = -dist_diff
+            direction = "ahead"
+        }
+        
+        if dist_diff < 0.25 {
+            let dist_m = dist_diff * 1609.34
+            return "\(dist_m) meters " + direction
+        } else {
+            // round distance to nearest .25
+            let denominator = 4.0
+            var dist_str = String(round(dist_diff*denominator )/denominator );
+            return "\(dist_str) miles " + direction
+        }
     }
     
     

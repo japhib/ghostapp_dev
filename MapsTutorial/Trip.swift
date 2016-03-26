@@ -131,8 +131,9 @@ class Trip : NSObject, NSCoding {
             if point.time > end_time {
                 break
             }
-            let time_delta = point.time - previous!.time
-            so_far += time_delta
+            let dist_delta = point.distFromPoint(previous!)
+            so_far += dist_delta
+            previous = point
         }
         return so_far
     }
@@ -145,8 +146,9 @@ class Trip : NSObject, NSCoding {
                 previous = point
                 continue
             }
-            let time_delta = point.time - previous!.time
-            so_far += time_delta
+            let dist_delta = point.distFromPoint(previous!)
+            so_far += dist_delta
+            previous = point
         }
         return so_far
     }
