@@ -75,12 +75,12 @@ class Trip : NSObject, NSCoding {
         return timestamp
     }
     
-    func getFirstPoint() {
-        
+    func getFirstPoint() -> Point? {
+        return points.first
     }
     
-    func getLastPoint() {
-        
+    func getLastPoint() -> Point? {
+        return points.last
     }
     
     func getLength() -> Double {
@@ -118,5 +118,44 @@ class Trip : NSObject, NSCoding {
             ret.addCoordinate(CLLocationCoordinate2D(latitude: point.latitude, longitude: point.longitude))
         }
         return ret
+    }
+    
+    func getDistUntilTime(end_time: Double) -> Double {
+        var so_far = 0.0
+        var previous : Point? = nil
+        for point in points {
+            if previous == nil {
+                previous = point
+                continue
+            }
+            if point.time > end_time {
+                break
+            }
+            let time_delta = point.time - previous!.time
+            so_far += time_delta
+        }
+        return so_far
+    }
+    
+    func getTotalDist() -> Double {
+        var so_far = 0.0
+        var previous : Point? = nil
+        for point in points {
+            if previous == nil {
+                previous = point
+                continue
+            }
+            let time_delta = point.time - previous!.time
+            so_far += time_delta
+        }
+        return so_far
+    }
+    
+    func getTotalTime() -> Double {
+        let last = getLastPoint()
+        if last == nil {
+            return 0.0
+        }
+        return last!.time
     }
 }

@@ -40,4 +40,9 @@ class Point : NSObject, NSCoding {
         aCoder.encodeDouble(time, forKey: PropertyKey.timeKey)
     }
     
+    // in miles
+    static func distBetweenPoints(point1: Point, point2: Point) -> Double {
+        // http://www.movable-type.co.uk/scripts/latlong.html
+    }
+    
 }
