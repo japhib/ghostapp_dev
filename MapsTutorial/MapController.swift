@@ -115,9 +115,15 @@ class MapController: UIViewController, CLLocationManagerDelegate {
 //            print("workin on bounds dog!")
 ////            self.subMapView.camera = camera!
 //        }
-        let tripstats = TripStats(ghost: self.past_trip!, current: self.curr_trip)
-        print(tripstats.toString())
-        statusLbl.text = tripstats.getStatusStr()
+        if let past_trip = self.past_trip {
+            let tripstats = TripStats(ghost: self.past_trip!, current: self.curr_trip)
+            print(tripstats.toString())
+            statusLbl.text = tripstats.getStatusStr()
+        }
+        else {
+            print("No ghost, dry run")
+            statusLbl.hidden = true;
+        }
     }
     
     func addCoordinate(latitude: Double, longitude: Double) {
