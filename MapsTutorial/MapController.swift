@@ -48,6 +48,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         
         self.loadTrip()
         self.timer.start()
+        self.statusLbl.backgroundColor = UIColor.lightGrayColor()
     }
     
     private func initLocationServices() {

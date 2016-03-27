@@ -40,6 +40,7 @@ class StartPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // This populates the table and is set when we do tripsTable.dataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()
+        cell.backgroundColor = UIColor.lightGrayColor()
         let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:50))
         label.text = "\(trips![indexPath.row].getName())"
         cell.addSubview(label)
@@ -69,7 +70,6 @@ class StartPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
 // I think this is for if we want to change the styling of the swipe
     func tableView(tableView: (UITableView!), commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: (NSIndexPath!)) {
-        
     }
 // handles the actions of buttons in the swipe
     func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
