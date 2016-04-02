@@ -106,19 +106,30 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         addCoordinate(latitude, longitude: longitude)
         updateCurrentPolyline()
         // update camera
+        
         let current_past_path_coordinate = updatePastPolyline()
-//        let bounds = GMSCoordinateBounds(coordinate: current_past_path_coordinate, coordinate: CLLocationCoordinate2DMake(latitude, longitude))
-//        print(bounds)
-//        let update = GMSCameraUpdate.fitBounds(bounds, withPadding: 10.0)
-//        self.subMapView.moveCamera(update)
+        print("current past path coord lat: \(current_past_path_coordinate.latitude) long: \(current_past_path_coordinate.longitude)")
+        let current_coordinate = CLLocationCoordinate2DMake(latitude, longitude)
+        print("current coord lat: \(current_coordinate.latitude) long: \(current_coordinate.longitude)")
+        
+        
+        let bounds = GMSCoordinateBounds.init(coordinate: current_coordinate, coordinate: current_coordinate)
+        
+        print("Northeast bound: \(bounds.northEast)")
+        print("Southwest bound: \(bounds.southWest)")
+        
+        let update = GMSCameraUpdate.fitBounds(bounds, withPadding: 50.0)
+        self.subMapView.moveCamera(update)
 //        print(camera)
 //        if(camera != nil){
 //            print("workin on bounds dog!")
 ////            self.subMapView.camera = camera!
 //        }
+        
+        
         if let past_trip = self.past_trip {
             let tripstats = TripStats(ghost: self.past_trip!, current: self.curr_trip)
-            print(tripstats.toString())
+//            print(tripstats.toString())
             statusLbl.text = tripstats.getStatusStr()
         }
         else {
@@ -170,6 +181,7 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         past_polyline!.strokeWidth = 5.0
         past_polyline!.strokeColor = UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 0.5)
         past_polyline!.map = self.subMapView
+        print("PAST PATH COUNT: \(past_path.count())")
         return past_path.coordinateAtIndex(past_path.count())
     }
 ////////////////

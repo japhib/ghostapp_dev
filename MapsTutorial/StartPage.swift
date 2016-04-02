@@ -25,8 +25,12 @@ class StartPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
         if(trips != nil){
             print(trips!.count)
         }
+
         tripsTable.dataSource = self
         tripsTable.delegate = self
+        tripsTable.separatorColor = UIColor.whiteColor()
+        tripsTable.tableFooterView = UIView()
+
     }
     
     // initializes the data source
@@ -40,10 +44,18 @@ class StartPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
     // This populates the table and is set when we do tripsTable.dataSource
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) ->   UITableViewCell {
         let cell = UITableViewCell()
+//        tableView.separatorColor = UIColor.whiteColor()
         cell.backgroundColor = UIColor.lightGrayColor()
-        let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:50))
-        label.text = "\(trips![indexPath.row].getName())"
-        cell.addSubview(label)
+//        let label = UILabel(frame: CGRect(x:0, y:0, width:200, height:50))
+//        label.text = "\(trips![indexPath.row].getName())"
+
+        cell.textLabel!.text = "\(trips![indexPath.row].getName())"
+        cell.textLabel!.textAlignment = NSTextAlignment.Center
+        
+        cell.preservesSuperviewLayoutMargins = false
+        cell.separatorInset = UIEdgeInsetsZero
+        cell.layoutMargins = UIEdgeInsetsZero
+        
         return cell
     }
     
