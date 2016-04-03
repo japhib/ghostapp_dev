@@ -113,13 +113,13 @@ class MapController: UIViewController, CLLocationManagerDelegate {
         print("current coord lat: \(current_coordinate.latitude) long: \(current_coordinate.longitude)")
         
         
-        let bounds = GMSCoordinateBounds.init(coordinate: current_coordinate, coordinate: current_coordinate)
+//        let bounds = GMSCoordinateBounds.init(coordinate: current_coordinate, coordinate: current_coordinate)
         
-        print("Northeast bound: \(bounds.northEast)")
-        print("Southwest bound: \(bounds.southWest)")
+//        print("Northeast bound: \(bounds.northEast)")
+//        print("Southwest bound: \(bounds.southWest)")
         
-        let update = GMSCameraUpdate.fitBounds(bounds, withPadding: 50.0)
-        self.subMapView.moveCamera(update)
+//        let update = GMSCameraUpdate.fitBounds(bounds, withPadding: 50.0)
+//        self.subMapView.moveCamera(update)
 //        print(camera)
 //        if(camera != nil){
 //            print("workin on bounds dog!")
