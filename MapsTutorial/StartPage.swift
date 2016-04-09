@@ -26,6 +26,28 @@ class StartPage: UIViewController, UITableViewDataSource, UITableViewDelegate {
             print(trips!.count)
         }
 
+        
+//        var label = UILabel(frame: CGRectMake(0, 0, 200, 21));
+//        label.textAlignment = NSTextAlignment.Center
+//        label.text = "Trips"
+        
+        let headerView = UIView();
+        
+//        headerView.addSubview(label)
+        
+        headerView.setNeedsLayout()
+        headerView.layoutIfNeeded()
+        
+//        let height = headerView.systemLayoutSizeFittingSize(UILayoutFittingCompressedSize).height
+        var frame = headerView.frame
+        frame.size.height = 20
+//        frame.
+        headerView.frame = frame
+        headerView.backgroundColor =  UIColor.orangeColor()
+        tripsTable.tableHeaderView = headerView
+        
+//        tripsTable.tableHeaderView.
+        
         tripsTable.dataSource = self
         tripsTable.delegate = self
         tripsTable.separatorColor = UIColor.whiteColor()

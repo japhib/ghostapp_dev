@@ -21,15 +21,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qez-Te-CRp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="739"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-LC-eWX">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VdW-LC-eWX">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="709"/>
                                         <color key="backgroundColor" red="0.35289999999999999" green="0.35289999999999999" blue="0.35289999999999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsV-bM-VNA">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsV-bM-VNA">
                                         <rect key="frame" x="0.0" y="709" width="414" height="30"/>
-                                        <color key="backgroundColor" red="0.15290000000000001" green="0.76859999999999995" blue="0.039199999999999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.61667936408542223" green="0.76859999999999995" blue="0.73176655355005005" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.25005159316051717" green="0.25556344696969702" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Start">
+                                        <state key="normal" title="Start" image="ghost">
                                             <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -54,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D2h-8J-6e7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="77" y="98"/>
+            <point key="canvasLocation" x="77" y="120"/>
         </scene>
         <!--Map Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -182,4 +182,7 @@
             <point key="canvasLocation" x="1202" y="98"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ghost" width="100" height="108"/>
+    </resources>
 </document>
